@@ -5,13 +5,19 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import QuizScreen from "./screens/QuizScreen";
 import QuizEmotionScreen from "./screens/QuizEmotionScreen";
 import QuizSituationScreen from "./screens/QuizSituationScreen";
+import CategoryScreen from "./screens/CategoryScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer style={styles.container}>
-      <Stack.Navigator initialRouteName="Quiz">
+      <Stack.Navigator initialRouteName="Category">
+        <Stack.Screen
+          name="Category"
+          component={CategoryScreen}
+          options={{title:"카테고리"}}
+        />
         <Stack.Screen
           name="Quiz"
           component={QuizScreen}
