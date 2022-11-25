@@ -7,7 +7,7 @@ export default function CategoryScreen({navigation}) {
     <View style={styles.block}>
       <Button
         title="감정카드"
-        onPress={()=> navigation.navigate("EmotionCard")}
+        onPress={()=> navigation.navigate("EmotionList")}
        />
       <Button
         title="퀴즈 맞추기"
