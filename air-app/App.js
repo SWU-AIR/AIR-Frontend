@@ -6,6 +6,8 @@ import QuizScreen from "./screens/QuizScreen";
 import QuizEmotionScreen from "./screens/QuizEmotionScreen";
 import QuizSituationScreen from "./screens/QuizSituationScreen";
 import CategoryScreen from "./screens/CategoryScreen";
+import QuizReviewScreen from "./screens/QuizReviewScreen";
+import QuizResultScreen from "./screens/QuizResultScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +18,7 @@ export default function App() {
         <Stack.Screen
           name="Category"
           component={CategoryScreen}
-          options={{title:"카테고리"}}
+          options={{ title: "카테고리" }}
         />
         <Stack.Screen
           name="Quiz"
@@ -32,6 +34,16 @@ export default function App() {
           name="QuizSituation"
           component={QuizSituationScreen}
           options={{ title: "올바른 표정 찾기" }}
+        />
+        <Stack.Screen
+          name="QuizResult"
+          component={QuizResultScreen}
+          options={{ title: "퀴즈 결과" }}
+        />
+        <Stack.Screen
+          name="QuizReview"
+          component={QuizReviewScreen}
+          options={{ title: "오답 확인하기" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
