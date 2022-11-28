@@ -40,7 +40,12 @@ export default function QuizScreen({ navigation }) {
       <View style={styles.buttonflex}>
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate("QuizSituation")}
+          onPress={() =>
+            navigation.navigate("QuizSituation", {
+              arrayLength: emotionCardData.length,
+              emotionCard: emotionCardData,
+            })
+          }
         >
           <Text style={styles.text}>상황별 올바른 표정 찾기</Text>
           <Text style={styles.subtext}>

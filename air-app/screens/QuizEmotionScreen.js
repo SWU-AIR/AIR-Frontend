@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text, Image, Button } from "react-native";
+import { StyleSheet, View, Text, Image, Button, Pressable } from "react-native";
 
 export default function QuizEmotionScreen({ navigation, route }) {
   const [probCount, setProbCount] = useState(1);
@@ -123,33 +123,47 @@ export default function QuizEmotionScreen({ navigation, route }) {
 
   return (
     <View style={styles.block}>
-      <Text style={styles.countText}>{probCount}/10</Text>
-      {/* <Image source={questionData.image_source} /> 이미지 동적 변경 에러남 */}
+      <View style={styles.textContainer}>
+        <Text style={styles.countText}>{probCount}/10</Text>
+        {/* <Image source={questionData.image_source} /> 이미지 동적 변경 에러남 */}
+      </View>
       <Image
         style={styles.emotionCard}
         source={require("../images/emotion_card.png")}
       />
       <View style={styles.buttonContainer}>
-        <Button
-          style={styles.button}
-          title={answers[0].emotion}
-          onPress={(clickedAnswer) => clickAnswer(answers[0])}
-        />
-        <Button
-          style={styles.button}
-          title={answers[1].emotion}
-          onPress={(clickedAnswer) => clickAnswer(answers[1])}
-        />
-        <Button
-          style={styles.button}
-          title={answers[2].emotion}
-          onPress={(clickedAnswer) => clickAnswer(answers[2])}
-        />
-        <Button
-          style={styles.button}
-          title={answers[3].emotion}
-          onPress={(clickedAnswer) => clickAnswer(answers[3])}
-        />
+        <View style={styles.buttonflex}>
+          <Pressable
+            style={styles.button}
+            onPress={(clickedAnswer) => clickAnswer(answers[0])}
+          >
+            <Text style={styles.text}>{answers[0].emotion}</Text>
+          </Pressable>
+        </View>
+        <View style={styles.buttonflex}>
+          <Pressable
+            style={styles.button}
+            onPress={(clickedAnswer) => clickAnswer(answers[1])}
+          >
+            <Text style={styles.text}>{answers[1].emotion}</Text>
+          </Pressable>
+        </View>
+        <View style={styles.buttonflex}>
+          <Pressable
+            style={styles.button}
+            onPress={(clickedAnswer) => clickAnswer(answers[2])}
+          >
+            <Text style={styles.text}>{answers[2].emotion}</Text>
+          </Pressable>
+        </View>
+        <View style={styles.buttonflex}>
+          <Pressable
+            style={styles.button}
+            onPress={(clickedAnswer) => clickAnswer(answers[3])}
+          >
+            <Text style={styles.text}>{answers[3].emotion}</Text>
+          </Pressable>
+        </View>
       </View>
     </View>
   );
@@ -162,9 +176,50 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#FAFDFC",
+    paddingBottom: "25%",
+    padding: 20,
   },
-
+  textContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   countText: {
     textAlign: "center",
+    fontSize: 20,
+  },
+  emotionCard: {
+    flex: 6,
+    width: 300,
+    height: 250,
+    marginBottom: 10,
+    resizeMode: "contain",
+  },
+  buttonContainer: {
+    flex: 4.5,
+    width: "80%",
+  },
+  buttonflex: {
+    flex: 0.3,
+  },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 15,
+    paddingHorizontal: 35,
+    borderRadius: 20,
+    elevation: 3,
+    backgroundColor: "#91B4C2",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  text: {
+    fontSize: 18,
+    color: "white",
   },
 });
