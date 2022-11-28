@@ -8,7 +8,7 @@ export default function QuizReviewScreen({ navigation, route }) {
   return (
     <View style={styles.block}>
       <Text>
-        {wrongProbCount}/{route.params.wrongAnswerList.length}
+        {wrongProbCount}/{wrongAnswerList.length}
       </Text>
       <Text>화가 난</Text>
       <Text>정답에 대한 설명 간단하게(이 정보도 데이터에 있어야 할 듯)</Text>
