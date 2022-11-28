@@ -107,7 +107,7 @@ export default function QuizEmotionScreen({ navigation, route }) {
       console.log(`최종 점수: ${score + 1}`); // state가 실시간으로 안바뀌는건지 뭔지.. 1 더해줘야 제대로 된 점수 나옴.
       console.log(`오답 개수: ${wrongAnswerList.length}`);
 
-      // 문제 10개를 다 풀었다면 오답 확인 화면으로 넘어가기
+      // 문제 10개를 다 풀었다면 결과 확인 화면으로 넘어가기
       navigation.replace("QuizResult", {
         score: score + 1,
         wrongAnswerList: wrongAnswerList,
@@ -125,23 +125,32 @@ export default function QuizEmotionScreen({ navigation, route }) {
     <View style={styles.block}>
       <Text style={styles.countText}>{probCount}/10</Text>
       {/* <Image source={questionData.image_source} /> 이미지 동적 변경 에러남 */}
-      <Image source={require("../images/emotion_card.png")} />
-      <Button
-        title={answers[0].emotion}
-        onPress={(clickedAnswer) => clickAnswer(answers[0])}
+      <Image
+        style={styles.emotionCard}
+        source={require("../images/emotion_card.png")}
       />
-      <Button
-        title={answers[1].emotion}
-        onPress={(clickedAnswer) => clickAnswer(answers[1])}
-      />
-      <Button
-        title={answers[2].emotion}
-        onPress={(clickedAnswer) => clickAnswer(answers[2])}
-      />
-      <Button
-        title={answers[3].emotion}
-        onPress={(clickedAnswer) => clickAnswer(answers[3])}
-      />
+      <View style={styles.buttonContainer}>
+        <Button
+          style={styles.button}
+          title={answers[0].emotion}
+          onPress={(clickedAnswer) => clickAnswer(answers[0])}
+        />
+        <Button
+          style={styles.button}
+          title={answers[1].emotion}
+          onPress={(clickedAnswer) => clickAnswer(answers[1])}
+        />
+        <Button
+          style={styles.button}
+          title={answers[2].emotion}
+          onPress={(clickedAnswer) => clickAnswer(answers[2])}
+        />
+        <Button
+          style={styles.button}
+          title={answers[3].emotion}
+          onPress={(clickedAnswer) => clickAnswer(answers[3])}
+        />
+      </View>
     </View>
   );
 }
@@ -149,8 +158,10 @@ export default function QuizEmotionScreen({ navigation, route }) {
 const styles = StyleSheet.create({
   block: {
     flex: 1,
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#FAFDFC",
   },
 
   countText: {

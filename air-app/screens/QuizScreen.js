@@ -32,7 +32,12 @@ export default function QuizScreen({ navigation }) {
       />
       <Button
         title="상황별 올바른 표정 찾기"
-        onPress={() => navigation.navigate("QuizSituation")}
+        onPress={() =>
+          navigation.navigate("QuizSituation", {
+            arrayLength: emotionCardData.length,
+            emotionCard: emotionCardData,
+          })
+        }
       />
     </View>
   );
