@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Button } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 
 export default function QuizScreen({ navigation }) {
@@ -21,19 +21,22 @@ export default function QuizScreen({ navigation }) {
 
   return (
     <View style={styles.block}>
-      <Button
-        title="사진 보고 감정 맞추기"
-        onPress={() =>
+      <View style={styles.buttonflex}>
+      <Pressable style={styles.button} onPress={() =>
           navigation.navigate("QuizEmotion", {
             arrayLength: emotionCardData.length,
             emotionCard: emotionCardData,
-          })
-        }
-      />
-      <Button
-        title="상황별 올바른 표정 찾기"
-        onPress={() => navigation.navigate("QuizSituation")}
-      />
+          })}>
+        <Text style={styles.text}>사진 보고 감정 맞추기</Text>
+        <Text style={styles.subtext}>주어진 사진을 보고 주인공의 감정을 맞춰보세요.</Text>
+      </Pressable>
+      </View>
+      <View style={styles.buttonflex}>
+      <Pressable style={styles.button} onPress={() => navigation.navigate("QuizSituation")}>
+        <Text style={styles.text}>상황별 올바른 표정 찾기</Text>
+        <Text style={styles.subtext}>주어진 상황과 사진을 보고 적절한 표정을 골라보세요.</Text>        
+      </Pressable>
+      </View>
     </View>
   );
 }
@@ -41,5 +44,40 @@ export default function QuizScreen({ navigation }) {
 const styles = StyleSheet.create({
   block: {
     flex: 1,
+    backgroundColor:'#FAFDFC'
   },
+  buttonflex:{
+    flex:0.3,
+  },
+  button:{
+    top:50,
+    left:50,
+    alignItems:'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 35,
+    borderRadius: 20,
+    width:'80%',
+    height:'80%',
+    elevation: 3,
+    backgroundColor: 'white',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  text:{
+    fontSize: 20,
+    lineHeight: 40,
+    fontWeight: 'bold',
+    color: 'black',  
+  },
+  subtext:{
+    fontSize: 16,
+    lineHeight: 40,
+    color: 'black',  
+  }
 });
