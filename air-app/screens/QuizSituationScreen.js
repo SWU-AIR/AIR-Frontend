@@ -65,26 +65,29 @@ export default function QuizSituationScreen({ navigation, route }) {
 
     setQuestionData({
       id: questionDatas.id,
-      image_source: "../images/emotion_card",
-      // image_source: require("./../images/emotion_card"),
+      image_source: questionDatas.image_source,
       emotion: questionDatas.emotion,
     });
 
     setAnswers([
       {
         id: emotionCard[array[0]].id,
+        image_source: emotionCard[array[0]].image_source,
         emotion: emotionCard[array[0]].emotion,
       },
       {
         id: emotionCard[array[1]].id,
+        image_source: emotionCard[array[1]].image_source,
         emotion: emotionCard[array[1]].emotion,
       },
       {
         id: emotionCard[array[2]].id,
+        image_source: emotionCard[array[2]].image_source,
         emotion: emotionCard[array[2]].emotion,
       },
       {
         id: emotionCard[array[3]].id,
+        image_source: emotionCard[array[3]].image_source,
         emotion: emotionCard[array[3]].emotion,
       },
     ]);
@@ -115,7 +118,7 @@ export default function QuizSituationScreen({ navigation, route }) {
       console.log(`최종 점수: ${score + 1}`); // state가 실시간으로 안바뀌는건지 뭔지.. 1 더해줘야 제대로 된 점수 나옴.
       console.log(`오답 개수: ${wrongAnswerList.length}`);
 
-      // 문제 10개를 다 풀었다면 결과 확인 화면면으로 넘어가기
+      // 문제 10개를 다 풀었다면 결과 확인 화면으로 넘어가기
       navigation.replace("QuizResult", {
         score: score + 1,
         wrongAnswerList: wrongAnswerList,
@@ -133,12 +136,8 @@ export default function QuizSituationScreen({ navigation, route }) {
     <View style={styles.block}>
       <View style={styles.textContainer}>
         <Text style={styles.countText}>{probCount}/10</Text>
-        {/* <Image source={questionData.image_source} /> 이미지 동적 변경 에러남 */}
       </View>
-      <Image
-        source={require("./../images/emotion_card.png")}
-        style={styles.questionImage}
-      />
+      <Image source={questionData.image_source} style={styles.questionImage} />
       <View style={styles.imageContainer}>
         <View style={styles.imageBox}>
           <TouchableOpacity
@@ -146,34 +145,25 @@ export default function QuizSituationScreen({ navigation, route }) {
           >
             <Image
               style={styles.imgButton}
-              source={require("./../images/emotion_card.png")} // answers[0]의 이미지 출력
+              source={answers[0].image_source} // answers[0]의 이미지 출력
             />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={(clickedAnswer) => clickAnswer(answers[1])}
           >
-            <Image
-              style={styles.imgButton}
-              source={require("./../images/emotion_card.png")}
-            />
+            <Image style={styles.imgButton} source={answers[1].image_source} />
           </TouchableOpacity>
         </View>
         <View style={styles.imageBox}>
           <TouchableOpacity
             onPress={(clickedAnswer) => clickAnswer(answers[2])}
           >
-            <Image
-              style={styles.imgButton}
-              source={require("./../images/emotion_card.png")}
-            />
+            <Image style={styles.imgButton} source={answers[2].image_source} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={(clickedAnswer) => clickAnswer(answers[3])}
           >
-            <Image
-              style={styles.imgButton}
-              source={require("./../images/emotion_card.png")}
-            />
+            <Image style={styles.imgButton} source={answers[3].image_source} />
           </TouchableOpacity>
         </View>
       </View>
