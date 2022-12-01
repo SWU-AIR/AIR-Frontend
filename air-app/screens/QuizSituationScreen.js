@@ -94,10 +94,6 @@ export default function QuizSituationScreen({ navigation, route }) {
   };
 
   const clickAnswer = (clickedAnswer) => {
-    console.log(`probCount: ${probCount}`);
-    // console.log(`clickedAnswer.id: ${clickedAnswer.id}`);
-    // console.log(`clickedAnswer: ${clickedAnswer}`);
-
     if (clickedAnswer.id === questionData.id) {
       //정답
       setScore(score + 1);
@@ -123,11 +119,6 @@ export default function QuizSituationScreen({ navigation, route }) {
         score: score + 1,
         wrongAnswerList: wrongAnswerList,
       });
-
-      // for (var i = 0; i < wrongAnswerList.length; i++) {
-      //   console.log(`wrongAnswerList[${i}]: ${wrongAnswerList[i].id}`);
-      //   console.log(`wrongAnswerList[${i}]: ${wrongAnswerList[i].emotion}`);
-      // }
     }
     setProbCount(probCount + 1); // 문제 번호 증가
   };

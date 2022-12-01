@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text, Button, Image } from "react-native";
 
 export default function QuizReviewScreen({ navigation, route }) {
-  const [cardIndex, setCardIndex] = useState(0);
+  const [cardIndex, setCardIndex] = useState(0); // 문제(카드) 인덱스스
   const wrongAnswerList = route.params.wrongAnswerList; // 오답 리스트
-
-  console.log(wrongAnswerList);
 
   // 감정 카드
   const cardNav = (type) => {
