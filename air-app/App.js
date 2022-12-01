@@ -9,6 +9,7 @@ import CategoryScreen from "./screens/CategoryScreen";
 import QuizReviewScreen from "./screens/QuizReviewScreen";
 import QuizResultScreen from "./screens/QuizResultScreen";
 import EmotionListScreen from "./screens/EmotionListScreen";
+import EmotionCardScreen from "./screens/EmotionCardScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -49,8 +50,9 @@ export default function App() {
         <Stack.Screen
           name="EmotionList"
           component={EmotionListScreen}
-          options={{title:"감정 카드 리스트"}}
+          options={{ title: "감정 카드" }}
         />
+        <Stack.Screen name="EmotionCard" component={EmotionCardScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
