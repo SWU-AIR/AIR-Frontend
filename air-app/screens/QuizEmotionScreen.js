@@ -57,26 +57,29 @@ export default function QuizEmotionScreen({ navigation, route }) {
 
     setQuestionData({
       id: questionDatas.id,
-      image_source: "../images/emotion_card",
-      // image_source: require("./../images/emotion_card"),
+      image_source: questionDatas.image_source,
       emotion: questionDatas.emotion,
     });
 
     setAnswers([
       {
         id: emotionCard[array[0]].id,
+        image_source: emotionCard[array[0]].image_source,
         emotion: emotionCard[array[0]].emotion,
       },
       {
         id: emotionCard[array[1]].id,
+        image_source: emotionCard[array[1]].image_source,
         emotion: emotionCard[array[1]].emotion,
       },
       {
         id: emotionCard[array[2]].id,
+        image_source: emotionCard[array[2]].image_source,
         emotion: emotionCard[array[2]].emotion,
       },
       {
         id: emotionCard[array[3]].id,
+        image_source: emotionCard[array[3]].image_source,
         emotion: emotionCard[array[3]].emotion,
       },
     ]);
@@ -125,12 +128,8 @@ export default function QuizEmotionScreen({ navigation, route }) {
     <View style={styles.block}>
       <View style={styles.textContainer}>
         <Text style={styles.countText}>{probCount}/10</Text>
-        {/* <Image source={questionData.image_source} /> 이미지 동적 변경 에러남 */}
       </View>
-      <Image
-        style={styles.emotionCard}
-        source={require("../images/emotion_card.png")}
-      />
+      <Image style={styles.emotionCard} source={questionData.image_source} />
       <View style={styles.buttonContainer}>
         <View style={styles.buttonflex}>
           <Pressable

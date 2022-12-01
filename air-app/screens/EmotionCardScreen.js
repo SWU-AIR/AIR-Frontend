@@ -15,7 +15,6 @@ export default function EmotionCardScreen({ navigation, route }) {
 
   const [guideIndex, setGuideIndex] = useState(0);
   const [cardIndex, setCardIndex] = useState(0);
-  const [imageSource, setImageSource] = useState(0);
 
   // 질문 가이드 보여주는 함수
   const guideNav = (type) => {
@@ -44,8 +43,6 @@ export default function EmotionCardScreen({ navigation, route }) {
       setCardIndex(cardIndex - 1);
     }
   };
-
-  console.log(JSON.stringify(route.params.emotionCard));
 
   return (
     <View style={styles.block}>

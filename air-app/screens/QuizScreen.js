@@ -5,18 +5,58 @@ import { NavigationContainer } from "@react-navigation/native";
 export default function QuizScreen({ navigation }) {
   // 감정 카드 데이터
   const emotionCardData = [
-    { id: 1, image_source: "../images/emotion_card", emotion: "놀람1" },
-    { id: 2, image_source: "../images/emotion_card", emotion: "슬픔1" },
-    { id: 3, image_source: "../images/emotion_card", emotion: "분노1" },
-    { id: 4, image_source: "../images/emotion_card", emotion: "행복1" },
-    { id: 5, image_source: "../images/emotion_card", emotion: "놀람2" },
-    { id: 6, image_source: "../images/emotion_card", emotion: "슬픔2" },
-    { id: 7, image_source: "../images/emotion_card", emotion: "분노2" },
-    { id: 8, image_source: "../images/emotion_card", emotion: "행복2" },
-    { id: 5, image_source: "../images/emotion_card", emotion: "놀람3" },
-    { id: 6, image_source: "../images/emotion_card", emotion: "슬픔3" },
-    { id: 7, image_source: "../images/emotion_card", emotion: "분노3" },
-    { id: 8, image_source: "../images/emotion_card", emotion: "행복3" },
+    {
+      id: 1,
+      image_source: require("../images/emotion_card.png"),
+      emotion: "놀람1",
+    },
+    {
+      id: 2,
+      image_source: require("../images/emotion_card.png"),
+      emotion: "슬픔1",
+    },
+    {
+      id: 3,
+      image_source: require("../images/emotion_card.png"),
+      emotion: "분노1",
+    },
+    { id: 4, image_source: require("../images/happy_1.png"), emotion: "행복1" },
+    {
+      id: 5,
+      image_source: require("../images/emotion_card.png"),
+      emotion: "놀람2",
+    },
+    {
+      id: 6,
+      image_source: require("../images/emotion_card.png"),
+      emotion: "슬픔2",
+    },
+    {
+      id: 7,
+      image_source: require("../images/emotion_card.png"),
+      emotion: "분노2",
+    },
+    { id: 8, image_source: require("../images/happy_2.png"), emotion: "행복2" },
+    {
+      id: 5,
+      image_source: require("../images/emotion_card.png"),
+      emotion: "놀람3",
+    },
+    {
+      id: 6,
+      image_source: require("../images/emotion_card.png"),
+      emotion: "슬픔3",
+    },
+    {
+      id: 7,
+      image_source: require("../images/emotion_card.png"),
+      emotion: "분노3",
+    },
+    {
+      id: 8,
+      image_source: require("../images/emotion_card.png"),
+      emotion: "행복3",
+    },
   ];
 
   return (
