@@ -7,69 +7,112 @@ export default function EmotionListScreen({ navigation }) {
   const emotionCardData = [
     {
       id: 1,
-      image_source: require("../images/emotion_card.png"),
-      emotion: "놀람",
+      image_source: require("../images/emotion-cards/happy_1.jpg"),
+      emotion: "기쁨",
     },
     {
       id: 2,
-      image_source: require("../images/emotion_card.png"),
-      emotion: "슬픔",
+      image_source: require("../images/emotion-cards/happy_2.jpg"),
+      emotion: "기쁨",
     },
     {
       id: 3,
-      image_source: require("../images/emotion_card.png"),
-      emotion: "분노",
+      image_source: require("../images/emotion-cards/happy_3.jpg"),
+      emotion: "기쁨",
     },
-    { id: 4, image_source: require("../images/happy_1.png"), emotion: "행복" },
+    {
+      id: 4,
+      image_source: require("../images/emotion-cards/happy_4.jpg"),
+      emotion: "기쁨",
+    },
     {
       id: 5,
-      image_source: require("../images/emotion_card.png"),
-      emotion: "놀람",
+      image_source: require("../images/emotion-cards/sad_1.jpg"),
+      emotion: "슬픔",
     },
     {
       id: 6,
-      image_source: require("../images/emotion_card.png"),
+      image_source: require("../images/emotion-cards/sad_2.jpg"),
       emotion: "슬픔",
     },
     {
       id: 7,
-      image_source: require("../images/emotion_card.png"),
-      emotion: "분노",
-    },
-    { id: 8, image_source: require("../images/happy_2.png"), emotion: "행복" },
-    {
-      id: 9,
-      image_source: require("../images/emotion_card.png"),
-      emotion: "놀람",
-    },
-    {
-      id: 10,
-      image_source: require("../images/emotion_card.png"),
+      image_source: require("../images/emotion-cards/sad_3.jpg"),
       emotion: "슬픔",
     },
     {
+      id: 8,
+      image_source: require("../images/emotion-cards/sad_4.jpg"),
+      emotion: "슬픔",
+    },
+    {
+      id: 9,
+      image_source: require("../images/emotion-cards/sad_5.jpg"),
+      emotion: "슬픔",
+    },
+    {
+      id: 10,
+      image_source: require("../images/emotion-cards/angry_1.jpg"),
+      emotion: "분노",
+    },
+    {
       id: 11,
-      image_source: require("../images/emotion_card.png"),
+      image_source: require("../images/emotion-cards/angry_2.jpg"),
       emotion: "분노",
     },
     {
       id: 12,
-      image_source: require("../images/emotion_card.png"),
-      emotion: "행복",
+      image_source: require("../images/emotion-cards/angry_3.jpg"),
+      emotion: "분노",
     },
     {
       id: 13,
-      image_source: require("../images/emotion_card.png"),
-      emotion: "놀람",
+      image_source: require("../images/emotion-cards/angry_4.jpg"),
+      emotion: "분노",
     },
     {
       id: 14,
-      image_source: require("../images/emotion_card.png"),
-      emotion: "슬픔",
+      image_source: require("../images/emotion-cards/angry_5.png"),
+      emotion: "분노",
+    },
+    {
+      id: 15,
+      image_source: require("../images/emotion-cards/surprise_1.jpg"),
+      emotion: "놀람",
+    },
+    {
+      id: 16,
+      image_source: require("../images/emotion-cards/surprise_2.jpg"),
+      emotion: "놀람",
+    },
+    {
+      id: 17,
+      image_source: require("../images/emotion-cards/surprise_3.jpg"),
+      emotion: "놀람",
+    },
+    {
+      id: 18,
+      image_source: require("../images/emotion-cards/fear_1.jpg"),
+      emotion: "공포",
+    },
+    {
+      id: 19,
+      image_source: require("../images/emotion-cards/disgust_1.jpg"),
+      emotion: "혐오",
+    },
+    {
+      id: 20,
+      image_source: require("../images/emotion-cards/disgust_2.jpg"),
+      emotion: "혐오",
+    },
+    {
+      id: 21,
+      image_source: require("../images/emotion-cards/disgust_3.jpg"),
+      emotion: "혐오",
     },
   ];
 
-  const cardHappy = emotionCardData.filter((card) => card.emotion === "행복");
+  const cardHappy = emotionCardData.filter((card) => card.emotion === "기쁨");
   const cardSad = emotionCardData.filter((card) => card.emotion === "슬픔");
   const cardAngry = emotionCardData.filter((card) => card.emotion === "분노");
   const cardSurprise = emotionCardData.filter(
