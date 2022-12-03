@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
   },
   buttonflex: {
     flex: 0.3,
-  },
-  button: {
-    top: 50,
-    left: 50,
     alignItems: "center",
     justifyContent: "center",
+  },
+  button: {
+    marginTop: 20,
+    paddingTop: 30,
     paddingVertical: 12,
     paddingHorizontal: 35,
     borderRadius: 20,
@@ -71,13 +71,13 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
   },
   text: {
-    fontSize: 20,
+    fontSize: 23,
     lineHeight: 40,
     fontWeight: "bold",
     color: "black",
   },
   subtext: {
-    fontSize: 16,
+    fontSize: 18,
     lineHeight: 40,
     color: "black",
   },

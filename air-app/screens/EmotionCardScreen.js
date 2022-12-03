@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Text, Image, Button, Pressable } from "react-native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 
 export default function EmotionCardScreen({ navigation, route }) {
   // 감정에 따라 화면 타이틀 설정
@@ -9,7 +9,7 @@ export default function EmotionCardScreen({ navigation, route }) {
 
   const questionGuide = [
     "해당 감정의 얼굴 모양을 따라해봐요.",
-    "당신은 어떤 행동을 할 때 이 감정을 느끼나요?",
+    "당신은 어떤 행동을 할 때 \n이 감정을 느끼나요?",
     "당신은 이 감정을 느낄 때 어떤 모습인가요?",
   ];
 
@@ -46,24 +46,40 @@ export default function EmotionCardScreen({ navigation, route }) {
 
   return (
     <View style={styles.block}>
-      <View style={styles.textContainer}>
-        <Text>
-          {cardIndex + 1}/{route.params.emotionCard.length}
-        </Text>
-      </View>
-      <Image
-        style={styles.emotionCard}
-        source={route.params.emotionCard[cardIndex].image_source}
-      />
-      <Text>화가 난 - 설명??</Text>
-      <View style={styles.questionGuideContainer}>
-        <Button title="<" onPress={(type) => guideNav("prev")} />
-        <Text>{questionGuide[guideIndex]}</Text>
-        <Button title=">" onPress={(type) => guideNav("next")} />
-      </View>
-      <View style={styles.navigateBtn}>
-        <Button title="이전" onPress={(type) => cardNav("prev")} />
-        <Button title="다음" onPress={(type) => cardNav("next")} />
+      <View style={styles.viewContainer}>
+        <View style={styles.textContainer}>
+          <Text style={styles.countText}>
+            {cardIndex + 1}/{route.params.emotionCard.length}
+          </Text>
+        </View>
+        <Image
+          style={styles.emotionCard}
+          source={route.params.emotionCard[cardIndex].image_source}
+        />
+        <View style={styles.questionGuideContainer}>
+          <Pressable onPress={(type) => guideNav("prev")}>
+            <Image
+              style={styles.arrow}
+              source={require("../images/icons/angle-left.png")}
+            />
+          </Pressable>
+          <Text style={styles.guideText}>{questionGuide[guideIndex]}</Text>
+          <Pressable onPress={(type) => guideNav("next")}>
+            <Image
+              style={styles.arrow}
+              source={require("../images/icons/angle-right.png")}
+            />
+          </Pressable>
+        </View>
+        <View style={styles.navigateBtn}>
+          <Pressable style={styles.button} onPress={(type) => cardNav("prev")}>
+            <Text style={styles.btnTitle}>이전</Text>
+          </Pressable>
+          <View style={styles.align} />
+          <Pressable style={styles.button} onPress={(type) => cardNav("next")}>
+            <Text style={styles.btnTitle}>다음</Text>
+          </Pressable>
+        </View>
       </View>
     </View>
   );
@@ -74,17 +90,84 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#FAFDFC",
+    paddingBottom: "15%",
   },
-  questionGuideContainer: {
-    flexDirection: "row",
-    backgroundColor: "white",
+  viewContainer: {
+    flex: 1,
+    width: "90%",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: 50,
+    paddingBottom: 50,
+  },
+  textContainer: {
+    flex: 0.5,
+  },
+  countText: {
+    textAlign: "center",
+    fontSize: 20,
   },
   emotionCard: {
+    flex: 6,
     width: 300,
     height: 250,
     resizeMode: "contain",
   },
-  navigateBtn: {
+  questionGuideContainer: {
+    flex: 3,
     flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    width: "95%",
+    marginBottom: 30,
+    borderRadius: 20,
+    elevation: 3,
+    backgroundColor: "white",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  arrow: {
+    width: 20,
+    height: 20,
+    opacity: 0.5,
+  },
+  guideText: {
+    fontSize: 20,
+    width: "80%",
+    textAlign: "center",
+  },
+  navigateBtn: {
+    flex: 0.8,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  align: {
+    width: "3%",
+  },
+  button: {
+    width: "46%",
+    paddingVertical: 15,
+    paddingHorizontal: 35,
+    borderRadius: 20,
+    elevation: 3,
+    backgroundColor: "#91B4C2",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  btnTitle: {
+    fontSize: 18,
+    color: "white",
+    textAlign: "center",
   },
 });

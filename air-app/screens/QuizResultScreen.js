@@ -18,7 +18,7 @@ export default function QuizResultScreen({ navigation, route }) {
           <Progress.Bar
             color="rgba(145, 180, 194, 1)"
             unfilledColor="rgba(217, 217, 217, 1)"
-            borderWidth="0"
+            borderWidth={0}
             height={8}
             width={250}
             progress={route.params.score / 10}

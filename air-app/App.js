@@ -20,39 +20,82 @@ export default function App() {
         <Stack.Screen
           name="Category"
           component={CategoryScreen}
-          options={{ title: "카테고리" }}
+          options={{
+            title: "카테고리",
+            headerStyle: {
+              backgroundColor: "#FAFDFC",
+            },
+          }}
         />
         <Stack.Screen
           name="Quiz"
           component={QuizScreen}
-          options={{ title: "퀴즈" }}
+          options={{
+            title: "퀴즈",
+            headerStyle: {
+              backgroundColor: "#FAFDFC",
+            },
+          }}
         />
         <Stack.Screen
           name="QuizEmotion"
           component={QuizEmotionScreen}
-          options={{ title: "감정 맞추기" }}
+          options={{
+            title: "감정 맞추기",
+            headerStyle: {
+              backgroundColor: "#FAFDFC",
+            },
+          }}
         />
         <Stack.Screen
           name="QuizSituation"
           component={QuizSituationScreen}
-          options={{ title: "올바른 표정 찾기" }}
+          options={{
+            title: "올바른 표정 찾기",
+            headerStyle: {
+              backgroundColor: "#FAFDFC",
+            },
+          }}
         />
         <Stack.Screen
           name="QuizResult"
           component={QuizResultScreen}
-          options={{ title: "퀴즈 결과" }}
+          options={{
+            title: "퀴즈 결과",
+            headerStyle: {
+              backgroundColor: "#FAFDFC",
+            },
+          }}
         />
         <Stack.Screen
           name="QuizReview"
           component={QuizReviewScreen}
-          options={{ title: "오답 확인하기" }}
+          options={{
+            title: "오답 확인하기",
+            headerStyle: {
+              backgroundColor: "#FAFDFC",
+            },
+          }}
         />
         <Stack.Screen
           name="EmotionList"
           component={EmotionListScreen}
-          options={{ title: "감정 카드" }}
+          options={{
+            title: "감정 카드",
+            headerStyle: {
+              backgroundColor: "#FAFDFC",
+            },
+          }}
         />
-        <Stack.Screen name="EmotionCard" component={EmotionCardScreen} />
+        <Stack.Screen
+          name="EmotionCard"
+          component={EmotionCardScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: "#FAFDFC",
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

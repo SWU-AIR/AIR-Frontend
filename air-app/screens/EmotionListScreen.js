@@ -171,12 +171,12 @@ const styles = StyleSheet.create({
   },
   buttonflex: {
     flex: 0.1,
+    alignItems: "center",
+    justifyContent: "center",
   },
   button: {
     top: 50,
-    left: 50,
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: 20,
     paddingVertical: 5,
     paddingHorizontal: 35,
     borderRadius: 20,
@@ -195,5 +195,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     color: "black",
+    textAlign: "center",
   },
 });
