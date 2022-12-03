@@ -29,11 +29,13 @@ export default function QuizResultScreen({ navigation, route }) {
         <View style={styles.buttonflex}>
           <Pressable
             style={styles.button}
-            onPress={() =>
-              navigation.navigate("QuizReview", {
-                wrongAnswerList: route.params.wrongAnswerList,
-              })
-            }
+            onPress={() => {
+              if (route.params.wrongAnswerList.length > 0) {
+                navigation.navigate("QuizReview", {
+                  wrongAnswerList: route.params.wrongAnswerList,
+                });
+              }
+            }}
           >
             <Text style={styles.text}>오답 확인하기</Text>
           </Pressable>
