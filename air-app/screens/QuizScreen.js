@@ -112,6 +112,70 @@ export default function QuizScreen({ navigation }) {
     },
   ];
 
+  // 상황별 이미지 데이터
+  const situationCardData = [
+    {
+      id: 1,
+      image_source: require("../images/situational-cards/happy_1.png"),
+      answer_source: require("../images/situational-cards/happy_1_ans.png"),
+      desc: "즐겁게 생일파티를 하고 있습니다.",
+    },
+    {
+      id: 2,
+      image_source: require("../images/situational-cards/happy_2.png"),
+      answer_source: require("../images/situational-cards/happy_2_ans.png"),
+      desc: "기쁜 소식을 확인했습니다!",
+    },
+    {
+      id: 3,
+      image_source: require("../images/situational-cards/happy_3.png"),
+      answer_source: require("../images/situational-cards/happy_3_ans.png"),
+      desc: "가족들과 좋은 시간을 보내고 있어요.",
+    },
+    {
+      id: 4,
+      image_source: require("../images/situational-cards/angry_1.png"),
+      answer_source: require("../images/situational-cards/angry_1_ans.jpg"),
+      desc: "굉장히 화나는 일이 있나봅니다.",
+    },
+    {
+      id: 5,
+      image_source: require("../images/situational-cards/disgust_1.png"),
+      answer_source: require("../images/situational-cards/disgust_1_ans.png"),
+      desc: "음료에서 이상한 맛이 납니다.",
+    },
+    {
+      id: 6,
+      image_source: require("../images/situational-cards/fear_1.png"),
+      answer_source: require("../images/situational-cards/fear_1_ans.png"),
+      desc: "어린 소년은 주사가 무섭고 아픕니다.",
+    },
+    {
+      id: 7,
+      image_source: require("../images/situational-cards/angry_2.png"),
+      answer_source: require("../images/situational-cards/angry_2_ans.png"),
+      desc: "아내가 남편에게 화를 내고 있습니다.",
+    },
+    {
+      id: 8,
+      image_source: require("../images/situational-cards/sad_1.png"),
+      answer_source: require("../images/situational-cards/sad_1_ans.png"),
+      desc: "고민이 많아 힘이 듭니다.",
+    },
+    {
+      id: 9,
+      image_source: require("../images/situational-cards/surprise_1.png"),
+      answer_source: require("../images/situational-cards/surprise_1_ans.png"),
+      desc: "무언가 놀라운 일이 생겼습니다.",
+    },
+    {
+      id: 10,
+      image_source: require("../images/situational-cards/surprise_2.png"),
+      answer_source: require("../images/situational-cards/surprise_2_ans.png"),
+      desc: "남자는 매우 놀랐습니다.",
+    },
+  ];
+
   return (
     <View style={styles.block}>
       <View style={styles.buttonflex}>
@@ -135,8 +199,8 @@ export default function QuizScreen({ navigation }) {
           style={styles.button}
           onPress={() =>
             navigation.navigate("QuizSituation", {
-              arrayLength: emotionCardData.length,
-              emotionCard: emotionCardData,
+              arrayLength: situationCardData.length,
+              emotionCard: situationCardData,
             })
           }
         >

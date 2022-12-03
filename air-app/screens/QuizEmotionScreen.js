@@ -29,7 +29,7 @@ export default function QuizEmotionScreen({ navigation, route }) {
     emotion: "", // 정답
   });
 
-  useEffect(() => {
+  useEffect((arrayLength) => {
     settingQuizData(route.params.arrayLength);
   }, []);
 
