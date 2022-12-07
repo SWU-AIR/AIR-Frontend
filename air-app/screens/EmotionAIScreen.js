@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { Camera, CameraType } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";
+import * as MediaLibrary from "expo-media-library";
 
 export default function EmotionAIScreen({ navigation }) {
   const [type, setType] = useState(CameraType.back);
@@ -18,6 +19,7 @@ export default function EmotionAIScreen({ navigation }) {
   const [startCamera, setStartCamera] = useState(false);
   const [previewVisible, setPreviewVisible] = useState(false);
   const [capturedImage, setCapturedImage] = useState(null);
+  const [image, setImage] = useState(null);
 
   const __startCamera = async () => {
     const { status } = await Camera.requestCameraPermissionsAsync();
@@ -73,9 +75,28 @@ export default function EmotionAIScreen({ navigation }) {
     __startCamera();
   };
 
-  const SavePhoto = (photo) => {
+  const SavePhoto = async (photo) => {
+    if (photo) {
+      await MediaLibrary.saveToLibraryAsync(photo.uri); // 이미지 갤러리에 저장
+    }
     navigation.navigate("ShowPicture", {
       photo: photo.uri,
+    });
+  };
+
+  const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      //   allowsEditing: true,
+      //   aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log("result: ", result);
+
+    navigation.navigate("ShowPicture", {
+      photo: result.uri,
     });
   };
 
@@ -163,7 +184,7 @@ export default function EmotionAIScreen({ navigation }) {
                   justifyContent: "space-between",
                 }}
               >
-                <Button title="gallery" />
+                <Button title="gallery" onPress={pickImage} />
                 <TouchableOpacity
                   onPress={__takePicture}
                   style={{
@@ -186,45 +207,4 @@ export default function EmotionAIScreen({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({
-  buttonContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  camera: {
-    flex: 1,
-    width: "100%",
-  },
-  cameraButton: {
-    width: 130,
-    borderRadius: 4,
-    backgroundColor: "#14274e",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    height: 40,
-  },
-  cameraContainer: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  takePictureBtnContainer: {
-    position: "absolute",
-    bottom: 0,
-    flexDirection: "row",
-    flex: 1,
-    width: "100%",
-    padding: 20,
-    justifyContent: "space-between",
-  },
-  takePictureBtn: {
-    width: 70,
-    height: 70,
-    bottom: 0,
-    borderRadius: 50,
-    backgroundColor: "#fff",
-  },
-});
+const styles = StyleSheet.create({});
