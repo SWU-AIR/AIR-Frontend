@@ -30,7 +30,7 @@ export default function CategoryScreen({ navigation }) {
       <View style={styles.buttonflex}>
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate("EmotionAI")}
+          onPress={() => navigation.navigate("Camera")}
         >
           <Text style={styles.text}>감정 판단 AI</Text>
           <Text style={styles.subtext}>

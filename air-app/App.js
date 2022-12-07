@@ -10,8 +10,8 @@ import QuizReviewScreen from "./screens/QuizReviewScreen";
 import QuizResultScreen from "./screens/QuizResultScreen";
 import EmotionListScreen from "./screens/EmotionListScreen";
 import EmotionCardScreen from "./screens/EmotionCardScreen";
+import CameraScreen from "./screens/CameraScreen";
 import EmotionAIScreen from "./screens/EmotionAIScreen";
-import ShowPicture from "./screens/ShowPicture";
 
 const Stack = createNativeStackNavigator();
 
@@ -99,8 +99,8 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="EmotionAI"
-          component={EmotionAIScreen}
+          name="Camera"
+          component={CameraScreen}
           options={{
             title: "감정 판단 AI",
             headerStyle: {
@@ -109,10 +109,13 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="ShowPicture"
-          component={ShowPicture}
+          name="EmotionAI"
+          component={EmotionAIScreen}
           options={{
-            title: "사진 확인",
+            title: "감정 판단 AI",
+            headerStyle: {
+              ackgroundColor: "#FAFDFC",
+            },
           }}
         />
       </Stack.Navigator>
